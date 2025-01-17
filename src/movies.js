@@ -7,7 +7,7 @@ export default [
         imageUrl: '/static/img/jungle-cruise.jpeg',
         director: 'Jaume Collet-Serra',
         year: '2021',
-        rating: '6.6',
+        rating: 6.6,
         category: 'movie'
     },
     {
@@ -18,7 +18,7 @@ export default [
         imageUrl: 'https://m.media-amazon.com/images/I/81PmFts26DL._AC_UF1000,1000_QL80_.jpg',
         director: 'Edward Bazalgette',
         year: '2023',
-        rating: '6.9',
+        rating: 6.9,
         category: 'movie'
     },
     {
@@ -29,7 +29,7 @@ export default [
         director: 'Steven Spielberg',
         year: '1996',
         imageUrl: 'https://m.media-amazon.com/images/M/MV5BZGZhZGQ1ZWUtZTZjYS00MDJhLWFkYjctN2ZlYjE5NWYwZDM2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg',
-        rating: '8.6',
+        rating: 8.6,
         description: ' Following the Normandy Landings, a group of U.S. soldiers go behind enemy lines to retrieve a paratrooper whose brothers have been killed in action.'
     }
 ]
