@@ -32,4 +32,4 @@ export default [
         rating: 8.6,
         description: ' Following the Normandy Landings, a group of U.S. soldiers go behind enemy lines to retrieve a paratrooper whose brothers have been killed in action.'
     }
-]
+];
