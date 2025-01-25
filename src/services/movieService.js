@@ -1,5 +1,3 @@
-import { v4 as uuid } from 'uuid';
-import movies from "../movies.js";
 import Movie from '../models/Movie.js';
 
 export default {
@@ -29,12 +27,12 @@ export default {
     },
 
     create(movieData) {
-        movies.push({
-            id: newId,
+        const result = Movie.create({
             ...movieData,
             rating: Number(movieData.rating),
+            year: Number(movieData.year),
         });
 
-        return newId;
+        return result;
     }
 }
