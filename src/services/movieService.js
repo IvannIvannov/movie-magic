@@ -4,21 +4,22 @@ import Movie from '../models/Movie.js';
 
 export default {
     getAll(filter = {}) {
-        let result = Movie.find({});
+        let query = Movie.find({});
 
-        // if(filter.search){
-        //     result = result.filter(movie => movie.title.toLowerCase().includes(filter.search.toLowerCase()));
-        // }
+        if(filter.search){
+            // *find or where
+            query = query.where({title: filter.search});
+        }
 
-        // if(filter.genre) {
-        //     result = result.filter(movie => movie.genre.toLowerCase() === filter.genre);
-        // }
+        if(filter.genre) {
+            query = query.where({genre: filter.genre});
+        }
 
-        // if(filter.year) {
-        //     result = result.filter(movie => movie.year === filter.year);
-        // }
+        if(filter.year) {
+            query = query.where({year: Number(filter.year)});
+        }
 
-        return Movie.find({});
+        return query;
     },
 
     getOne(movieId) {
@@ -28,8 +29,6 @@ export default {
     },
 
     create(movieData) {
-        const newId = uuid();
-
         movies.push({
             id: newId,
             ...movieData,
