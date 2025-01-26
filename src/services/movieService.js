@@ -4,17 +4,17 @@ export default {
     getAll(filter = {}) {
         let query = Movie.find({});
 
-        if(filter.search){
+        if (filter.search) {
             // *find or where
-            query = query.where({title: filter.search});
+            query = query.where({ title: filter.search });
         }
 
-        if(filter.genre) {
-            query = query.where({genre: filter.genre});
+        if (filter.genre) {
+            query = query.where({ genre: filter.genre });
         }
 
-        if(filter.year) {
-            query = query.where({year: Number(filter.year)});
+        if (filter.year) {
+            query = query.where({ year: Number(filter.year) });
         }
 
         return query;
@@ -25,7 +25,7 @@ export default {
 
         return result;
     },
-    getOneWithCasts(movieId){
+    getOneWithCasts(movieId) {
         return this.getOne(movieId).populate('casts');
     },
     create(movieData) {
@@ -38,11 +38,21 @@ export default {
         return result;
     },
     async attachCast(movieId, castId) {
-        const movie = await Movie.findById(movieId);
-        movie.casts.push(castId);
-        
-        await movie.save();
 
-        return movie;
+        // !Attach 1
+        // const movie = await Movie.findById(movieId);
+        // movie.casts.push(castId);
+
+        // if (movie.casts.includes(castId)) {
+        //     return;
+        // }
+
+        // await movie.save();
+
+        // return movie;
+
+        // !Attach2
+        return Movie.findByIdAndUpdate(movieId, { $push: { casts: castId } });
+
     }
 }
